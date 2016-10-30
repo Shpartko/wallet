@@ -15,7 +15,8 @@ return [
     |
     */
 
-    'default' => env('QUEUE_DRIVER', 'sync'),
+    //Use database queue!
+    'default' => env('QUEUE_DRIVER', 'database'),
 
     /*
     |--------------------------------------------------------------------------

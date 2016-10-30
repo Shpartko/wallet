@@ -374,7 +374,7 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
             );
         }
 
-        return is_string($controller) ? $controller : 'n/a';
+        return (string) $controller ?: 'n/a';
     }
 
     private function getCookieHeader($name, $value, $expires, $path, $domain, $secure, $httponly)

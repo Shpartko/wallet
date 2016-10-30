@@ -229,7 +229,6 @@ class ControllerResolverTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @requires PHP 7.1
-     * @group legacy
      */
     public function testGetNullableArguments()
     {
@@ -245,7 +244,6 @@ class ControllerResolverTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @requires PHP 7.1
-     * @group legacy
      */
     public function testGetNullableArgumentsWithDefaults()
     {

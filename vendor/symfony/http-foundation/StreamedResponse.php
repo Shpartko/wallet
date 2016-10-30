@@ -28,7 +28,6 @@ class StreamedResponse extends Response
 {
     protected $callback;
     protected $streamed;
-    private $headersSent;
 
     /**
      * Constructor.
@@ -45,7 +44,6 @@ class StreamedResponse extends Response
             $this->setCallback($callback);
         }
         $this->streamed = false;
-        $this->headersSent = false;
     }
 
     /**
@@ -70,22 +68,6 @@ class StreamedResponse extends Response
     public function setCallback(callable $callback)
     {
         $this->callback = $callback;
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * This method only sends the headers once.
-     */
-    public function sendHeaders()
-    {
-        if ($this->headersSent) {
-            return;
-        }
-
-        $this->headersSent = true;
-
-        parent::sendHeaders();
     }
 
     /**
