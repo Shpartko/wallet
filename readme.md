@@ -187,7 +187,7 @@ http://wallet/public/api/client. В запросе необходимо пере
 
 # Развертывание решения #
 ```
->>> git cline https://github.com/matskoigor/wallet.git
+>>> git clone https://github.com/matskoigor/wallet.git
 >>> cd wallet
 ```
 
