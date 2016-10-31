@@ -78,7 +78,7 @@ class MainJobController extends Controller
         
         if($tran_cnt == 0){
             Transaction::whereBetween('tran_id', [$tran_id, $tran_id + $this->pack_cnt])->update(['status'=>'ended']);
-            Last_transaction::query()->update(['tran_id' => $tran_id  + $this->pack_cnt ]);
+            Last_transaction::query()->update(['tran_id' => $tran_id  + $this->pack_cnt + 1]);
             
             if($this->loging){
                 Log::info('Main job finished. Transaction: ' . $tran_id . ' - ' . ($tran_id + $this->pack_cnt));
