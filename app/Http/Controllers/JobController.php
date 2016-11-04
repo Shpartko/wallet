@@ -94,7 +94,7 @@ class JobController extends Controller
     }
     
     private function incWalletBalance(Wallet $wallet, $amount){
-        $wallet->balance += $amount;
-        $wallet->save();
+        DB::raw('update wallet set balance = + :amount where wallet_id=:wallet_id',
+                ['amount' => $amount, 'wallet_id' => $wallet->wallet_id]);
     }
 }
