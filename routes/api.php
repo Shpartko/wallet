@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+Route::put('/client', 'ClientController@create');
+Route::put('/exchange_rate', 'ExchangeRateController@add');
+Route::post('/client/{name}', 'TransactionController@clientTransaction');
+Route::post('/wallet/{wallet}', 'TransactionController@walletTransaction');
+Route::post('/client/{name_from}/{name_to}', 'TransactionController@clientTransferTransaction');
+Route::post('/wallet/{wallet_from}/{wallet_to}', 'TransactionController@walletTransferTransaction');
