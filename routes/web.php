@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WalletHistController@welcome');
+Route::post('/client/{client_id}', 'WalletHistController@report');
+Route::get('/client/{client_id}', 'WalletHistController@report');
