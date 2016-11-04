@@ -195,6 +195,7 @@ http://wallet/public/api/client. В запросе необходимо пере
 
 Для развертывания миграций и первоначального наполнения БД необходимо выполнить команду:
 ```
+>>> php artisan migrate:install
 >>> php artisan migrate
 >>> php artisan db:seed
 ```
